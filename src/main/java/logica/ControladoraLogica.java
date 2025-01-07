@@ -10,7 +10,5 @@ public class ControladoraLogica {
         controlPersistencia.crearAlumno(alu);
     }
 
-    public void eliminarAlumno(int id){
-        controlPersistencia.eliminarAlumno(id);
-    }
+    
 }

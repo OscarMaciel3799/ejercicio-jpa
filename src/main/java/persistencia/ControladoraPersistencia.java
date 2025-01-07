@@ -16,5 +16,11 @@ public class ControladoraPersistencia {
 
     }
 
-    
+    public void eliminarAlumno(int id) {
+        try {
+            aluJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
