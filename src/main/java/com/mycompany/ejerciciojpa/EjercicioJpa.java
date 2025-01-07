@@ -14,6 +14,7 @@ public class EjercicioJpa {
         
         //Simulamos la creacion de un alumno, que por lo general se hace desde
         //la interfaz grafica(del frontend)
+        
         /*       
         Alumno alu= new Alumno(12, "Esteban", "Quito", new Date());
 
