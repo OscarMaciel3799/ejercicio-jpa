@@ -1,6 +1,8 @@
 
 package persistencia;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import logica.Alumno;
@@ -22,5 +24,23 @@ public class ControladoraPersistencia {
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void editarAlumno(Alumno alu) {
+        try {
+            aluJpa.edit(alu);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Alumno traerAlumno(int id) {
+        return aluJpa.findAlumno(id);
+    }
+
+    public ArrayList<Alumno> traerListaAlumnos() {
+        List<Alumno> listaAux=aluJpa.findAlumnoEntities();
+        ArrayList<Alumno> listaAlumnos=new ArrayList<Alumno> (listaAux);
+        return listaAlumnos;
     }
 }
