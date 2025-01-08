@@ -1,31 +1,43 @@
+
 package logica;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Carrera implements Serializable {
+public class Materia implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String nombre;
+    private String regimen;
     
-    @OneToMany (mappedBy = "carre")
-    private LinkedList<Materia> listaMaterias;
-    
-    public Carrera() {
+    @ManyToOne
+    private Carrera carre;
+
+    public Materia() {
     }
 
-    public Carrera(int id, String nombre, LinkedList<Materia> listaMaterias) {
+    public Materia(int id, String nombre, String regimen, Carrera carre) {
         this.id = id;
         this.nombre = nombre;
-        this.listaMaterias = listaMaterias;
-    }    
+        this.regimen = regimen;
+        this.carre = carre;
+    }
+
+    public Carrera getCarre() {
+        return carre;
+    }
+
+    public void setCarre(Carrera carre) {
+        this.carre = carre;
+    }
+
+    
 
     public int getId() {
         return id;
@@ -43,17 +55,17 @@ public class Carrera implements Serializable {
         this.nombre = nombre;
     }
 
-    public LinkedList<Materia> getListaMaterias() {
-        return listaMaterias;
+    public String getRegimen() {
+        return regimen;
     }
 
-    public void setListaMaterias(LinkedList<Materia> listaMaterias) {
-        this.listaMaterias = listaMaterias;
+    public void setRegimen(String regimen) {
+        this.regimen = regimen;
     }
-    
+
     @Override
     public String toString() {
-        return "Carrera{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", regimen=" + regimen + '}';
     }
     
     

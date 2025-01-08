@@ -64,4 +64,32 @@ public class ControladoraLogica {
         
     }
     
+    //Materias
+    
+    //Metodo para crear alumnos en la base de datos
+    public void crearMateria(Materia mate){
+        controlPersistencia.crearMateria(mate);
+    }
+
+    //Metodo para eliminar un alumnos de la base de datos
+    public void eliminarMateria(int id){
+        controlPersistencia.eliminarMateria(id);
+    }
+    
+    //Metodo para editar la informacion de alumnos en la base de datos
+    public void editarMateria(Materia mate){
+        controlPersistencia.editarMateria(mate);
+    }
+    
+    //Metodo para trear la informacion del alumno en la base de datos
+    public Materia traerMateria(int id){
+        return controlPersistencia.traerMateria(id);
+    }
+    
+    //Metodo para trear la informacion del TODOS los alumnos de la base de datos
+    public ArrayList<Materia> traerListaMateria(){
+        return controlPersistencia.traerListaMateria();
+        
+    }
+    
 }
