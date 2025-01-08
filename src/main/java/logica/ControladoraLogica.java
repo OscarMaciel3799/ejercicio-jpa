@@ -35,4 +35,33 @@ public class ControladoraLogica {
         return controlPersistencia.traerListaAlumnos();
         
     }
+    
+    //Carrera
+    
+    //Metodo para crear alumnos en la base de datos
+    public void crearCarrera(Carrera carre){
+        controlPersistencia.crearCarrera(carre);
+    }
+
+    //Metodo para eliminar un alumnos de la base de datos
+    public void eliminarCarrera(int id){
+        controlPersistencia.eliminarCarrera(id);
+    }
+    
+    //Metodo para editar la informacion de alumnos en la base de datos
+    public void editarCarrera(Carrera carre){
+        controlPersistencia.editarCarrera(carre);
+    }
+    
+    //Metodo para trear la informacion del alumno en la base de datos
+    public Carrera traerCarrera(int id){
+        return controlPersistencia.traerCarrera(id);
+    }
+    
+    //Metodo para trear la informacion del TODOS los alumnos de la base de datos
+    public ArrayList<Carrera> traerListaCarrera(){
+        return controlPersistencia.traerListaCarrera();
+        
+    }
+    
 }

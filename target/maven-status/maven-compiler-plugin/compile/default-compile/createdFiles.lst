@@ -1,2 +1,12 @@
-.netbeans_automatic_build
+logica\Carrera_.class
+logica\ControladoraLogica.class
+logica\Alumno_.class
+logica\Alumno.class
 com\mycompany\ejerciciojpa\EjercicioJpa.class
+persistencia\CarreraJpaController.class
+logica\Carrera.class
+persistencia\exceptions\NonexistentEntityException.class
+persistencia\exceptions\PreexistingEntityException.class
+persistencia\AlumnoJpaController.class
+persistencia\ControladoraPersistencia.class
+persistencia\exceptions\IllegalOrphanException.class
